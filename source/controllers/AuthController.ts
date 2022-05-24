@@ -23,7 +23,11 @@ export class AuthController implements Controller {
     next: NextFunction
   ): Promise<Response | void> {
     try {
+      const { email, password } = request.body;
+      const newUser = await this.AuthService.register({ email, password });
       response.send('user details');
-    } catch (error: any) {}
+    } catch (error: any) {
+      next(new Error(error.message));
+    }
   }
 }
