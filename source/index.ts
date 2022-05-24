@@ -1,5 +1,7 @@
 import 'dotenv/config';
+
 import Application from './App';
+
 import { Controller } from './interfaces';
 
 const controllers: Controller[] = [
