@@ -4,12 +4,9 @@ import Application from './App';
 
 import { Controller } from './interfaces';
 
-const controllers: Controller[] = [
-   // chat controller
-   // user controller
-   // auth controller
-   // message controller 
-];
+import { UserController } from './controllers';
+
+const controllers: Controller[] = [new UserController()];
 
 const app = new Application(Number(process.env.PORT), controllers);
 app.startListen();
