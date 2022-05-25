@@ -12,9 +12,9 @@ export class AuthController implements Controller {
   }
 
   private initializeRoutes(): void {
-    this.router.route(this.path + 'signup').post();
-    this.router.route(this.path + 'signin').post();
-    this.router.route(this.path + 'me').get();
+    this.router.route(this.path + '/signup').post();
+    this.router.route(this.path + '/signin').post();
+    this.router.route(this.path + '/me').get();
   }
 
   private async SignUp(
