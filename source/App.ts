@@ -6,7 +6,7 @@ import helmet from 'helmet';
 import compression from 'compression';
 
 import { Controller } from './interfaces';
-import ErrorHandlerMiddleware from './middlewares/ErrorHandlerMiddleware';
+import { ErrorHandlerMiddleware } from './middlewares';
 
 export default class Application {
   private expressApp: express.Application;
