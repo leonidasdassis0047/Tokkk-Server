@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import compression from 'compression';
 
 import { Controller } from './interfaces';
+import ErrorHandlerMiddleware from './middlewares/ErrorHandlerMiddleware';
 
 export default class Application {
   private expressApp: express.Application;
@@ -15,6 +16,8 @@ export default class Application {
     this.setupDatabaseConnection();
     this.initializeApplicationMiddlewares();
     this.initializeControllers();
+
+    this.expressApp.use(ErrorHandlerMiddleware);
   }
 
   private initializeApplicationMiddlewares() {
